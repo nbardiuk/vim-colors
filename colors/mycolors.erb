@@ -40,11 +40,9 @@
     # Make sure the name of your colorscheme is unique and attractive.
     # The description should fit in a single line with no linefeed.
     information = {
-        author:      "foo",
-        email:       "foo@foo.foo",
-        name:        "rnb",
-        description: "Lorem ipsum dolor sit amet.",
-        webpage:     "http://www.example.com"
+        author:      "Nazarii Bardiuk",
+        email:       "nazarii@bardiuk.com",
+        name:        "mycolors",
     }
 
     # Step 3: colors
@@ -61,22 +59,36 @@
     #
     # If your colors are defined correctly, the resulting colorscheme is guaranteed
     # to work in GVim (Windows/Linux), MacVim (MacOS), and any properly set up terminal emulator.
-    black       = ["#000000", 0, "black"]
-    darkred     = ["#800000", 1, "darkred"]
-    darkgreen   = ["#008000", 2, "darkgreen"]
-    darkyellow  = ["#808000", 3, "darkyellow"]
-    darkblue    = ["#000080", 4, "darkblue"]
-    darkmagenta = ["#800080", 5, "darkmagenta"]
-    darkcyan    = ["#008080", 6, "darkcyan"]
-    gray        = ["#c0c0c0", 7, "gray"]
-    darkgray    = ["#808080", 8, "darkgray"]
-    red         = ["#ff0000", 9, "red"]
-    green       = ["#00ff00", 10, "green"]
-    yellow      = ["#ffff00", 11, "yellow"]
-    blue        = ["#0000ff", 12, "blue"]
-    magenta     = ["#ff00ff", 13, "magenta"]
-    cyan        = ["#00ffff", 14, "cyan"]
-    white       = ["#ffffff", 15, "white"]
+    base0          = ["#24292e", 235, "NONE"] # github text fg
+    base1          = ["#41484f", 238, "NONE"] # lightened from 0
+    base2          = ["#6a737d", 243, "NONE"] # github comment
+    base3          = ["#76787b", 243, "NONE"]
+    base4          = ["#babbbc", 250, "NONE"]
+    red            = ["#d73a49", 167, "NONE"] # github syntax
+    darkred        = ["#b31d28", 124, "NONE"] # github syntax
+    purple         = ["#6f42c1", 91 , "NONE"] # github syntax
+    darkpurple     = ["#45267d", 237, "NONE"]
+    yellow         = ["#ffffc5", 230, "NONE"] # github search
+    green          = ["#22863a", 29 , "NONE"] # github syntax (html)
+    boldgreen      = ["#3ebc5c", 29 , "NONE"]
+    orange         = ["#e36209", 166, "NONE"] # github syntax
+    boldorange     = ["#f18338", 166, "NONE"]
+    lightgreen     = ["#e6ffed", 85 , "NONE"] # github diff
+    lightred       = ["#ffeef0", 167, "NONE"] # github diff
+    lightorange_nr = ["#fff5b1", 229, "NONE"] # github selected line number column
+    lightorange    = ["#fffbdd", 230, "NONE"] # github selected line
+    difftext       = ["#f2e496", 222, "NONE"]
+    darkblue       = ["#032f62", 17 , "NONE"]
+    blue           = ["#005cc5", 26 , "NONE"] # github syntax
+    blue0          = ["#669cc2", 153, "NONE"]
+    blue3          = ["#bde0fb", 153, "NONE"]
+    visualblue     = ["#e4effb", 153, "NONE"]
+    lightblue      = ["#f1f8ff", 153, "NONE"]
+    grey0          = ["#dde2e7", 254, "NONE"]
+    grey1          = ["#eceef1", 255, "NONE"]
+    grey2          = ["#f6f8fa", 255, "NONE"] # github inline code block bg
+    gutter         = ["#fafbfc", 255, "NONE"] # github generic light
+    bg             = ["#ffffff", 231, "NONE"]
 
     # Step 4: highlights
     #
@@ -115,75 +127,102 @@
     # :help highlight-default, the others are taken from :help group-name. Both help sections
     # are good reads, by the way.
     highlights = [
-        [ "Normal", white, darkgray, "NONE" ],
-        [ "NonText", white, darkgray, "NONE" ],
-        [ "EndOfBuffer","NonText" ],
-        [ "Comment", white, darkgray, "NONE" ],
-        [ "Constant", white, darkgray, "NONE" ],
-        [ "Error", white, darkgray, "NONE" ],
-        [ "Identifier", white, darkgray, "NONE" ],
-        [ "Ignore", white, darkgray, "NONE" ],
-        [ "PreProc", white, darkgray, "NONE" ],
-        [ "Special", white, darkgray, "NONE" ],
-        [ "Statement", white, darkgray, "NONE" ],
-        [ "String", white, darkgray, "NONE" ],
-        [ "Number", "Constant" ],
-        [ "Todo", white, darkgray, "NONE" ],
-        [ "Type", white, darkgray, "NONE" ],
-        [ "Underlined", white, darkgray, "NONE" ],
-        [ "StatusLine", white, darkgray, "NONE" ],
-        [ "StatusLineNC", white, darkgray, "NONE" ],
+        [ "Normal", bg, base0, "NONE" ],
+        [ "Cursor", base0, bg, "NONE" ],
+        [ "CursorIM", "Cursor" ],
+        [ "Visual", visualblue, "NONE", "NONE" ],
+        [ "VisualNOS", lightblue, "NONE", "NONE" ],
+        [ "Search", yellow, "NONE", "bold" ],
+        [ "IncSearch", "Search" ],
+        [ "NonText", bg, base4, "NONE" ], # listchars eol
+        [ "Whitespace", "NonText" ],      # listchars spaces, tab, ...
+        [ "SpecialKey", bg, base4, "NONE" ],
+        [ "Conceal", "NONE", red, "NONE" ],
+
+        [ "MatchParen", blue3, darkblue, "NONE" ],
+        [ "WarningMsg", "NONE", orange, "NONE"  ],
+        [ "ErrorMsg", "NONE", darkred, "NONE" ],
+        [ "Error", gutter, darkred, "NONE" ],
+        [ "Title", "NONE", base1, "bold" ],
+
+        [ "VertSplit", grey1, grey1, "NONE" ],
+        [ "LineNr", gutter, base4, "NONE" ],
+        [ "SignColumn", gutter, base4, "NONE" ],
+        [ "EndOfBuffer", gutter, base4, "NONE" ],
+        [ "ColorColumn", grey2, "NONE", "NONE" ],
+        [ "CursorLineNr", lightorange_nr, base3, "NONE" ],
+        [ "CursorLine", lightorange, "NONE", "NONE" ],
+        [ "CursorColumn", "CursorLine" ],
+        [ "QuickFixLine", blue3, "NONE", "bold" ],
+        [ "qfLineNr", gutter, base3, "NONE" ],
+
+        [ "Folded", lightblue, base3, "NONE" ],
+        [ "FoldColumn", gutter, blue0, "NONE" ],
+
+        [ "StatusLine", base0, grey2, "NONE" ],
+        [ "StatusLineNC", grey1, base3, "NONE" ],
         [ "StatusLineTerm", "StatusLine" ],
         [ "StatusLineTermNC", "StatusLineNC" ],
-        [ "VertSplit", white, darkgray, "NONE" ],
-        [ "TabLine", white, darkgray, "NONE" ],
-        [ "TabLineFill", white, darkgray, "NONE" ],
-        [ "TabLineSel", white, darkgray, "NONE" ],
-        [ "Title", white, darkgray, "NONE" ],
-        [ "CursorLine", white, darkgray, "NONE" ],
-        [ "LineNr", white, darkgray, "NONE" ],
-        [ "CursorLineNr", white, darkgray, "NONE" ],
-        [ "helpLeadBlank", white, darkgray, "NONE" ],
-        [ "helpNormal", white, darkgray, "NONE" ],
-        [ "Visual", white, darkgray, "NONE" ],
-        [ "VisualNOS", white, darkgray, "NONE" ],
-        [ "Pmenu", white, darkgray, "NONE" ],
-        [ "PmenuSbar", white, darkgray, "NONE" ],
-        [ "PmenuSel", white, darkgray, "NONE" ],
-        [ "PmenuThumb", white, darkgray, "NONE" ],
-        [ "FoldColumn", white, darkgray, "NONE" ],
-        [ "Folded", white, darkgray, "NONE" ],
-        [ "WildMenu", white, darkgray, "NONE" ],
-        [ "SpecialKey", white, darkgray, "NONE" ],
-        [ "DiffAdd", white, darkgray, "NONE" ],
-        [ "DiffChange", white, darkgray, "NONE" ],
-        [ "DiffDelete", white, darkgray, "NONE" ],
-        [ "DiffText", white, darkgray, "NONE" ],
-        [ "IncSearch", white, darkgray, "NONE" ],
-        [ "Search", white, darkgray, "NONE" ],
-        [ "Directory", white, darkgray, "NONE" ],
-        [ "MatchParen", white, darkgray, "NONE" ],
-        [ "SpellBad", white, darkgray, "NONE", red ],
-        [ "SpellCap", white, darkgray, "NONE", blue ],
-        [ "SpellLocal", white, darkgray, "NONE", magenta ],
-        [ "SpellRare", white, darkgray, "NONE", cyan ],
-        [ "ColorColumn", white, darkgray, "NONE" ],
-        [ "SignColumn", white, darkgray, "NONE" ],
-        [ "ErrorMsg", white, darkgray, "NONE" ],
-        [ "ModeMsg", white, darkgray, "NONE" ],
-        [ "MoreMsg", white, darkgray, "NONE" ],
-        [ "Question", white, darkgray, "NONE" ],
-        [ "WarningMsg", "Error" ],
-        [ "Cursor", white, darkgray, "NONE" ],
-        [ "CursorIM", "Cursor" ],
-        [ "CursorColumn", white, darkgray, "NONE" ],
-        [ "QuickFixLine", white, darkgray, "NONE" ],
+        [ "WildMenu", blue, grey2, "NONE" ],
+
+        [ "Pmenu", grey2, base3, "NONE" ],
+        [ "PmenuSbar", blue, grey2, "bold" ],
+        [ "PmenuSel", grey2, "NONE", "NONE" ],
+        [ "PmenuThumb", grey0, "NONE", "NONE" ],
+
+        [ "Question", "NONE", green, "NONE" ], # hit enter to continue
+
+        [ "TabLine", grey1, base1, "NONE" ],
+        [ "TabLineFill", grey0, grey0, "NONE" ],
+        [ "TabLineSel", "NONE", base1, "bold" ],
+
+        [ "DiffAdd", lightgreen, "NONE", "NONE" ],
+        [ "DiffDelete", lightred, base4, "NONE" ],
+        [ "DiffChange", lightorange, "NONE", "NONE" ],
+        [ "DiffText", difftext, "NONE", "NONE" ],
+
+        [ "DiffFile", grey2, base0, "NONE" ],
+        [ "DiffNewFile", grey2, base0, "NONE" ],
+        [ "DiffIndexLine", grey2, darkblue, "NONE" ],
+        [ "DiffLine", lightblue, base2, "NONE" ],
+        [ "DiffSubname", lightblue, darkblue, "NONE" ],
+        [ "DiffAdded", lightgreen, green, "NONE" ],
+        [ "DiffRemoved", lightred, red, "NONE" ],
+
+        [ "GitGutterAdd", gutter, green, "NONE" ],
+        [ "GitGutterChange", gutter, orange, "NONE" ],
+        [ "GitGutterDelete", gutter, darkred, "NONE" ],
+        [ "GitGutterChangeDelete", gutter, orange, "NONE" ],
+
+        [ "SpellBad", bg, red, "undercurl", red ],
+        [ "SpellCap", bg, green, "undercurl", green ],
+        [ "SpellLocal", bg, purple, "undercurl", yellow ],
+        [ "SpellRare", bg, purple, "undercurl", purple ],
+
+        [ "String", bg, base1, "bold" ],
+        [ "Number", bg, base1, "bold" ],
+        [ "Constant", bg, base1, "bold" ],
+        [ "clojureKeyword", "Constant" ],
+        [ "Comment", bg, base2, "NONE" ],
+        [ "Ignore", bg, base4, "NONE" ],
+        [ "Underlined", bg, base0, "underline" ],
+        [ "Identifier", bg, base0, "NONE" ],
+        [ "PreProc", bg, base0, "NONE" ],
+        [ "Special", bg, base0, "NONE" ],
+        [ "Statement", bg, base0, "NONE" ],
+        [ "Todo", bg, base0, "NONE" ],
+        [ "Type", bg, base0, "NONE" ],
+
+        [ "helpLeadBlank", bg, base0, "NONE" ],
+        [ "helpNormal", bg, base0, "NONE" ],
+        [ "Directory", bg, base0, "NONE" ],
+        [ "ModeMsg", bg, base0, "NONE" ],
+        [ "MoreMsg", bg, base0, "NONE" ],
         [ "Terminal", "Normal" ],
-        [ "Conceal", white, darkgray, "NONE" ],
-        [ "ToolbarLine", white, darkgray, "NONE" ],
-        [ "ToolbarButton", white, darkgray, "NONE" ],
-        [ "debugPC", white, darkgray, "NONE" ],
-        [ "debugBreakpoint", white, darkgray, "NONE" ],
+        [ "ToolbarLine", bg, base0, "NONE" ],
+        [ "ToolbarButton", bg, base0, "NONE" ],
+        [ "debugPC", bg, base0, "NONE" ],
+        [ "debugBreakpoint", bg, base0, "NONE" ],
     ]
 
     # Define the color palette used by :terminal when in GUI Vim
@@ -220,22 +259,22 @@
     # While you are certainly free to make colors 0 to 7 shades of blue,
     # this will inevitably cause usability issues so… be careful.
     terminal_ansi_colors = [
-        black,
-        darkred,
-        darkgreen,
-        darkyellow,
-        darkblue,
-        darkmagenta,
-        darkcyan,
-        gray,
-        darkgray,
-        red,
-        green,
-        yellow,
-        blue,
-        magenta,
-        cyan,
-        white
+        base1,# 0
+        red,# 1
+        boldgreen,# 2
+        boldorange,# 3
+        blue,# 4
+        purple,# 5
+        blue,# 6
+        base1,# 7
+        base3,# 8
+        darkred,# 9
+        green,# 10
+        orange,# 11
+        darkblue,# 12
+        darkpurple,# 13
+        darkblue,# 14
+        base0,# 15
     ]
 
     # Step 5: generation
@@ -313,8 +352,6 @@
 -%>
 " <%= information[:name] %>.vim -- Vim color scheme.
 " Author:      <%= information[:author] %> (<%= information[:email] %>)
-" Webpage:     <%= information[:webpage] %>
-" Description: <%= information[:description] %>
 " Last Change: <%= Time.new.strftime "%Y-%m-%d" %>
 
 hi clear
