@@ -1,16 +1,16 @@
 " mycolors.vim -- Vim color scheme.
 " Author:      Nazarii Bardiuk (nazarii@bardiuk.com)
-" Last Change: 2020-04-26
+" Last Change: 2020-05-22
 
 hi clear
 
-if exists("syntax_on")
+if exists('syntax_on')
   syntax reset
 endif
 
-let colors_name = "mycolors"
+let colors_name = 'mycolors'
 
-if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
+if ($TERM =~# '256' || &t_Co >= 256) || has('gui_running')
     hi Normal ctermbg=231 ctermfg=235 cterm=NONE guibg=#ffffff guifg=#24292e gui=NONE
     hi Cursor ctermbg=235 ctermfg=231 cterm=NONE guibg=#24292e guifg=#ffffff gui=NONE
     hi Visual ctermbg=153 ctermfg=NONE cterm=NONE guibg=#e4effb guifg=NONE gui=NONE
@@ -177,7 +177,7 @@ hi link clojureKeyword Constant
 hi link Terminal Normal
 
 let g:terminal_ansi_colors = [
-        \ '#41484f',
+        \ '#babbbc',
         \ '#d73a49',
         \ '#3ebc5c',
         \ '#f18338',
@@ -194,5 +194,22 @@ let g:terminal_ansi_colors = [
         \ '#032f62',
         \ '#24292e',
         \ ]
+
+let g:terminal_color_0 = '#babbbc'
+let g:terminal_color_1 = '#d73a49'
+let g:terminal_color_2 = '#3ebc5c'
+let g:terminal_color_3 = '#f18338'
+let g:terminal_color_4 = '#005cc5'
+let g:terminal_color_5 = '#6f42c1'
+let g:terminal_color_6 = '#005cc5'
+let g:terminal_color_7 = '#41484f'
+let g:terminal_color_8 = '#76787b'
+let g:terminal_color_9 = '#b31d28'
+let g:terminal_color_10 = '#22863a'
+let g:terminal_color_11 = '#e36209'
+let g:terminal_color_12 = '#032f62'
+let g:terminal_color_13 = '#45267d'
+let g:terminal_color_14 = '#032f62'
+let g:terminal_color_15 = '#24292e'
 
 " Generated with RNB (https://github.com/romainl/vim-rnb)

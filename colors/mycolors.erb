@@ -259,22 +259,22 @@
     # While you are certainly free to make colors 0 to 7 shades of blue,
     # this will inevitably cause usability issues so… be careful.
     terminal_ansi_colors = [
-        base1,# 0
-        red,# 1
-        boldgreen,# 2
-        boldorange,# 3
-        blue,# 4
-        purple,# 5
-        blue,# 6
-        base1,# 7
-        base3,# 8
-        darkred,# 9
-        green,# 10
-        orange,# 11
-        darkblue,# 12
-        darkpurple,# 13
-        darkblue,# 14
-        base0,# 15
+        base4,       # 0
+        red,         # 1
+        boldgreen,   # 2
+        boldorange,  # 3
+        blue,        # 4
+        purple,      # 5
+        blue,        # 6
+        base1,       # 7
+        base3,       # 8
+        darkred,     # 9
+        green,       # 10
+        orange,      # 11
+        darkblue,    # 12
+        darkpurple,  # 13
+        darkblue,    # 14
+        base0,       # 15
     ]
 
     # Step 5: generation
@@ -356,13 +356,13 @@
 
 hi clear
 
-if exists("syntax_on")
+if exists('syntax_on')
   syntax reset
 endif
 
-let colors_name = "<%= information[:name].downcase %>"
+let colors_name = '<%= information[:name].downcase %>'
 
-if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
+if ($TERM =~# '256' || &t_Co >= 256) || has('gui_running')
 <% for highlight in highlights -%>
 <% if highlight.length == 4 -%>
     hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][1] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][1] %> cterm=<%= highlight[3] %> guibg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][0] %> guifg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][0] %> gui=<%= highlight[3] %>
@@ -396,6 +396,10 @@ let g:terminal_ansi_colors = [
         \ '<%= color[0] %>',
 <% end -%>
         \ ]
+
+<% for color,index in terminal_ansi_colors.each_with_index -%>
+let g:terminal_color_<%= index %> = '<%= color[0] %>'
+<% end -%>
 <% end -%>
 
 " Generated with RNB (https://github.com/romainl/vim-rnb)
