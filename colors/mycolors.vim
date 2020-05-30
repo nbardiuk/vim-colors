@@ -1,6 +1,6 @@
 " mycolors.vim -- Vim color scheme.
 " Author:      Nazarii Bardiuk (nazarii@bardiuk.com)
-" Last Change: 2020-05-22
+" Last Change: 2020-05-30
 
 hi clear
 
@@ -177,39 +177,39 @@ hi link clojureKeyword Constant
 hi link Terminal Normal
 
 let g:terminal_ansi_colors = [
-        \ '#babbbc',
-        \ '#d73a49',
-        \ '#3ebc5c',
-        \ '#f18338',
-        \ '#005cc5',
-        \ '#6f42c1',
-        \ '#005cc5',
-        \ '#41484f',
-        \ '#76787b',
-        \ '#b31d28',
-        \ '#22863a',
-        \ '#e36209',
-        \ '#032f62',
-        \ '#45267d',
-        \ '#032f62',
-        \ '#24292e',
+        \ '#ffffff',
+        \ '#7c7c7c',
+        \ '#8e8e8e',
+        \ '#a0a0a0',
+        \ '#686868',
+        \ '#747474',
+        \ '#868686',
+        \ '#000000',
+        \ '#ababab',
+        \ '#999999',
+        \ '#e3e3e3',
+        \ '#b9b9b9',
+        \ '#525252',
+        \ '#252525',
+        \ '#5e5e5e',
+        \ '#101010',
         \ ]
 
-let g:terminal_color_0 = '#babbbc'
-let g:terminal_color_1 = '#d73a49'
-let g:terminal_color_2 = '#3ebc5c'
-let g:terminal_color_3 = '#f18338'
-let g:terminal_color_4 = '#005cc5'
-let g:terminal_color_5 = '#6f42c1'
-let g:terminal_color_6 = '#005cc5'
-let g:terminal_color_7 = '#41484f'
-let g:terminal_color_8 = '#76787b'
-let g:terminal_color_9 = '#b31d28'
-let g:terminal_color_10 = '#22863a'
-let g:terminal_color_11 = '#e36209'
-let g:terminal_color_12 = '#032f62'
-let g:terminal_color_13 = '#45267d'
-let g:terminal_color_14 = '#032f62'
-let g:terminal_color_15 = '#24292e'
+let g:terminal_color_0 = '#ffffff'
+let g:terminal_color_1 = '#7c7c7c'
+let g:terminal_color_2 = '#8e8e8e'
+let g:terminal_color_3 = '#a0a0a0'
+let g:terminal_color_4 = '#686868'
+let g:terminal_color_5 = '#747474'
+let g:terminal_color_6 = '#868686'
+let g:terminal_color_7 = '#000000'
+let g:terminal_color_8 = '#ababab'
+let g:terminal_color_9 = '#999999'
+let g:terminal_color_10 = '#e3e3e3'
+let g:terminal_color_11 = '#b9b9b9'
+let g:terminal_color_12 = '#525252'
+let g:terminal_color_13 = '#252525'
+let g:terminal_color_14 = '#5e5e5e'
+let g:terminal_color_15 = '#101010'
 
 " Generated with RNB (https://github.com/romainl/vim-rnb)
