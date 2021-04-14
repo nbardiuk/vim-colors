@@ -8,4 +8,4 @@ all: $(VIM_OUTPUTS)
 
 .PHONY: watch
 watch:
-	fd --extension erb | entr -cr time $(MAKE)
+	fd --extension erb | watchexec -cr time $(MAKE)

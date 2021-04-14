@@ -1,6 +1,6 @@
 " mycolors.vim -- Vim color scheme.
 " Author:      Nazarii Bardiuk (nazarii@bardiuk.com)
-" Last Change: 2020-05-30
+" Last Change: 2021-04-14
 
 hi clear
 
@@ -69,6 +69,7 @@ if ($TERM =~# '256' || &t_Co >= 256) || has('gui_running')
     hi Number ctermbg=231 ctermfg=238 cterm=bold guibg=#ffffff guifg=#41484f gui=bold
     hi Constant ctermbg=231 ctermfg=238 cterm=bold guibg=#ffffff guifg=#41484f gui=bold
     hi Comment ctermbg=231 ctermfg=243 cterm=NONE guibg=#ffffff guifg=#6a737d gui=NONE
+    hi Delimiter ctermbg=231 ctermfg=243 cterm=NONE guibg=#ffffff guifg=#76787b gui=NONE
     hi Ignore ctermbg=231 ctermfg=250 cterm=NONE guibg=#ffffff guifg=#babbbc gui=NONE
     hi Underlined ctermbg=231 ctermfg=235 cterm=underline guibg=#ffffff guifg=#24292e gui=underline
     hi Identifier ctermbg=231 ctermfg=235 cterm=NONE guibg=#ffffff guifg=#24292e gui=NONE
@@ -148,6 +149,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Number ctermbg=NONE ctermfg=NONE cterm=bold
     hi Constant ctermbg=NONE ctermfg=NONE cterm=bold
     hi Comment ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi Delimiter ctermbg=NONE ctermfg=NONE cterm=NONE
     hi Ignore ctermbg=NONE ctermfg=NONE cterm=NONE
     hi Underlined ctermbg=NONE ctermfg=NONE cterm=underline
     hi Identifier ctermbg=NONE ctermfg=NONE cterm=NONE
