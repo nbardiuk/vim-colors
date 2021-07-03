@@ -1,6 +1,6 @@
 " mycolors.vim -- Vim color scheme.
 " Author:      Nazarii Bardiuk (nazarii@bardiuk.com)
-" Last Change: 2021-04-14
+" Last Change: 2021-07-03
 
 hi clear
 
@@ -61,10 +61,10 @@ if ($TERM =~# '256' || &t_Co >= 256) || has('gui_running')
     hi GitGutterChange ctermbg=255 ctermfg=166 cterm=NONE guibg=#fafbfc guifg=#e36209 gui=NONE
     hi GitGutterDelete ctermbg=255 ctermfg=124 cterm=NONE guibg=#fafbfc guifg=#b31d28 gui=NONE
     hi GitGutterChangeDelete ctermbg=255 ctermfg=166 cterm=NONE guibg=#fafbfc guifg=#e36209 gui=NONE
-    hi SpellBad ctermbg=231 ctermfg=167 cterm=undercurl guibg=#ffffff guifg=#d73a49 gui=undercurl guisp=#d73a49
-    hi SpellCap ctermbg=231 ctermfg=29 cterm=undercurl guibg=#ffffff guifg=#22863a gui=undercurl guisp=#22863a
-    hi SpellLocal ctermbg=231 ctermfg=91 cterm=undercurl guibg=#ffffff guifg=#6f42c1 gui=undercurl guisp=#ffffc5
-    hi SpellRare ctermbg=231 ctermfg=91 cterm=undercurl guibg=#ffffff guifg=#6f42c1 gui=undercurl guisp=#6f42c1
+    hi SpellBad ctermbg=NONE ctermfg=166 cterm=NONE guibg=NONE guifg=#e36209 gui=NONE
+    hi SpellCap ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi SpellLocal ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi SpellRare ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi String ctermbg=231 ctermfg=238 cterm=bold guibg=#ffffff guifg=#41484f gui=bold
     hi Number ctermbg=231 ctermfg=238 cterm=bold guibg=#ffffff guifg=#41484f gui=bold
     hi Constant ctermbg=231 ctermfg=238 cterm=bold guibg=#ffffff guifg=#41484f gui=bold
@@ -141,10 +141,10 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi GitGutterChange ctermbg=NONE ctermfg=NONE cterm=NONE
     hi GitGutterDelete ctermbg=NONE ctermfg=NONE cterm=NONE
     hi GitGutterChangeDelete ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi SpellBad ctermbg=NONE ctermfg=NONE cterm=undercurl
-    hi SpellCap ctermbg=NONE ctermfg=NONE cterm=undercurl
-    hi SpellLocal ctermbg=NONE ctermfg=NONE cterm=undercurl
-    hi SpellRare ctermbg=NONE ctermfg=NONE cterm=undercurl
+    hi SpellBad ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi SpellCap ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi SpellLocal ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi SpellRare ctermbg=NONE ctermfg=NONE cterm=NONE
     hi String ctermbg=NONE ctermfg=NONE cterm=bold
     hi Number ctermbg=NONE ctermfg=NONE cterm=bold
     hi Constant ctermbg=NONE ctermfg=NONE cterm=bold
