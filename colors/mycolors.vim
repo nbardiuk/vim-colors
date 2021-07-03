@@ -15,7 +15,7 @@ if ($TERM =~# '256' || &t_Co >= 256) || has('gui_running')
     hi Cursor ctermbg=235 ctermfg=231 cterm=NONE guibg=#24292e guifg=#ffffff gui=NONE
     hi Visual ctermbg=153 ctermfg=NONE cterm=NONE guibg=#e4effb guifg=NONE gui=NONE
     hi VisualNOS ctermbg=153 ctermfg=NONE cterm=NONE guibg=#f1f8ff guifg=NONE gui=NONE
-    hi Search ctermbg=230 ctermfg=NONE cterm=bold guibg=#ffffc5 guifg=NONE gui=bold
+    hi Search ctermbg=230 ctermfg=NONE cterm=NONE guibg=#ffffc5 guifg=NONE gui=NONE
     hi NonText ctermbg=231 ctermfg=250 cterm=NONE guibg=#ffffff guifg=#babbbc gui=NONE
     hi SpecialKey ctermbg=231 ctermfg=250 cterm=NONE guibg=#ffffff guifg=#babbbc gui=NONE
     hi Conceal ctermbg=NONE ctermfg=167 cterm=NONE guibg=NONE guifg=#d73a49 gui=NONE
@@ -95,7 +95,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Cursor ctermbg=NONE ctermfg=NONE cterm=NONE
     hi Visual ctermbg=NONE ctermfg=NONE cterm=NONE
     hi VisualNOS ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Search ctermbg=NONE ctermfg=NONE cterm=bold
+    hi Search ctermbg=NONE ctermfg=NONE cterm=NONE
     hi NonText ctermbg=NONE ctermfg=NONE cterm=NONE
     hi SpecialKey ctermbg=NONE ctermfg=NONE cterm=NONE
     hi Conceal ctermbg=NONE ctermfg=NONE cterm=NONE
